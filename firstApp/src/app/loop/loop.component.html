@@ -1,0 +1,12 @@
+<h1>If Else</h1>
+<h1 *ngIf="show=='yes' ; then IfBlock else ElseBlock" ></h1>
+
+<div>
+  <ng-template #IfBlock>
+    <h1>Anurag Sahu If condition</h1>
+  </ng-template>
+
+  <ng-template #ElseBlock>
+    <h1>Relax Anurag Else condition</h1>
+  </ng-template>
+</div>
