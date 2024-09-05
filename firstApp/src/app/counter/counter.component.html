@@ -1,3 +1,8 @@
 <button class="minus" (click)="counter('minus')" >--</button>
 <p id="p">count {{count}}</p>
 <button  class="add" (click)="counter('add')" >++</button>
+<br><br>
+<p>property binding</p>
+<input type="text" name="user name" value={{name}} disabled={{disable}}>
+<br><br>
+<input type="text" name="user name" [value]= name  [disabled]=disable>

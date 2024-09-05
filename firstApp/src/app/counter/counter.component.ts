@@ -16,4 +16,6 @@ export class CounterComponent implements OnInit {
   counter(type : string){
     type==='add'?this.count++:this.count--
   }
+  name = "Anurag"
+  disable = false
 }
