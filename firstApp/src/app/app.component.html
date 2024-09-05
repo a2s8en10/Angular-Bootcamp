@@ -1,0 +1,25 @@
+<app-counter></app-counter>
+<app-login></app-login>
+<app-sign-up>/</app-sign-up>
+<app-sign-in>/</app-sign-in>
+<h1>Event</h1>
+<button (click)="getData('data')">click here</button>
+<br><br>
+<input type="text" #box (keyup)="getData(box.value)" placeholder="keyup">
+<br><br>
+<input type="text" #box (keydown)="getData(box.value)" placeholder="keydown" >
+<br><br>
+<input type="text" #box (blur)="getData(box.value)" placeholder="blur">
+<br><br>
+<input type="text" #box (input)="getData(box.value)" placeholder="input">
+<br><br>
+<input type="text" #box (mouseover)="getData(box.value)" placeholder="mouseover">
+<br><br>
+<input type="text" #box (mouseleave)="getData(box.value)" placeholder="mouseleave">
+<br><br>
+<button (click)="getData('click event')">click event </button>
+<br><br>
+
+<input type="text" #id placeholder="text Here ..." name="user name" />
+<button (click)="getValue(id.value)">click here </button>
+<p>my name is : {{displayval}}</p>
