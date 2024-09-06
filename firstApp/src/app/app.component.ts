@@ -15,10 +15,17 @@ getData (val : string){
   console.log(val);
  }
 
- displayval = '';
+ displayVal = '';
  getValue(val : string){
   console.warn(val)
-  this.displayval = val
+  this.displayVal = val
  }
 
+ color = "red";
+ bgColor="black"
+ changeColor()
+ {
+  this.color = "black"
+  this.bgColor = "red"
+ }
 }

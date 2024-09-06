@@ -30,4 +30,8 @@
 
 <input type="text" #id placeholder="text Here ..." name="user name" />
 <button (click)="getValue(id.value)">click here </button>
-<p>my name is : {{displayval}}</p>
+<p>my name is : {{displayVal}}</p>
+
+<h2>------------ style binding ------------------</h2>
+<h3 [style.color]="color" [style.backgroundColor]="bgColor">Style Binding</h3>
+<button (click)="changeColor()">Change Color</button>
