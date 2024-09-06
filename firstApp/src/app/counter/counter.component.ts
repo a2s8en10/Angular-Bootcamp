@@ -12,7 +12,7 @@ export class CounterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  count = 0
+  count = 1;
   counter(type : string){
     type==='add'?this.count++:this.count--
   }

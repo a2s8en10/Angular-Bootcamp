@@ -1,6 +1,16 @@
-<button class="minus" (click)="counter('minus')" >--</button>
-<p id="p">count {{count}}</p>
 <button  class="add" (click)="counter('add')" >++</button>
+<!-- <p id="p">count {{count}}</p> -->
+<div [ngSwitch]="count">
+  <h1 *ngSwitchCase="1">Day 1st Sunday</h1>
+  <h1 *ngSwitchCase="2">Day 2nd Monday</h1>
+  <h1 *ngSwitchCase="3">Day 3rd Tuesday</h1>
+  <h1 *ngSwitchCase="4">Day 4th Wednesday</h1>
+  <h1 *ngSwitchCase="5">Day 5th Thursday</h1>
+  <h1 *ngSwitchCase="6">Day 6th Friday</h1>
+  <h1 *ngSwitchCase="7">Day 7th Saturday</h1>
+  <h1 *ngSwitchDefault> Only 7 Day For One Week {{count}}</h1>
+</div>
+  <button class="minus" (click)="counter('minus')" >--</button>
 <br><br>
 <p>property binding</p>
 <input type="text" name="user name" value={{name}} disabled={{disable}}>

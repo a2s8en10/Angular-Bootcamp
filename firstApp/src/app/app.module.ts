@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
 import { CounterComponent } from './counter/counter.component';
 import { LoopComponent } from './loop/loop.component';
+import { ForLoopComponent } from './for-loop/for-loop.component';
 // import { SignInComponent } from './user-auth/sign-in/sign-in.component';
 // import { SignUpComponent } from './user-auth/sign-up/sign-up.component';
 
@@ -16,6 +17,7 @@ import { LoopComponent } from './loop/loop.component';
     LoginComponent,
     CounterComponent,
     LoopComponent,
+    ForLoopComponent,
     // UserAuthModule,
     // SignInComponent,
     // SignUpComponent

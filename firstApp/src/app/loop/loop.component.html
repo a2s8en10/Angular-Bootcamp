@@ -1,12 +1,36 @@
-<h1>If Else</h1>
-<h1 *ngIf="show=='yes' ; then IfBlock else ElseBlock" ></h1>
-
+<h1>if else </h1>
+<h1 *ngIf="show;then ifBlock else elseBlock" ></h1>
 <div>
-  <ng-template #IfBlock>
-    <h1>Anurag Sahu If condition</h1>
-  </ng-template>
+ <ng-template #ifBlock > if condition</ng-template>
+ <ng-template #elseBlock > Else condition</ng-template>
 
-  <ng-template #ElseBlock>
-    <h1>Relax Anurag Else condition</h1>
-  </ng-template>
+</div>
+
+<h1>------Elseif-------</h1>
+<div>
+  <ng-template [ngIf]="color=='red'" ><h1 style="color: red" >red color</h1></ng-template>
+  <ng-template [ngIf]="color=='green'" ><h1 style="color:green">green color</h1></ng-template>
+  <ng-template [ngIf]="color=='blue'" ><h1 style="color:blue">blue color</h1></ng-template>
+</div>
+
+<h1>------switch case-----</h1>
+<div [ngSwitch]="rang" >
+  <h1 *ngSwitchCase="'red'" style="color: rgb(223, 95, 95);" >red color</h1>
+  <h1 *ngSwitchCase="'green'" style="color: rgb(80, 214, 136);" >green color</h1>
+  <h1 *ngSwitchCase="'blue'" style="color: rgb(53, 80, 230);" >blue color</h1>
+  <h1 *ngSwitchCase="'yellow'" style="color: rgb(230, 233, 68);" >yellow color</h1>
+  <h1 *ngSwitchCase="'black'" style="color: rgb(19, 24, 21);" >black color</h1>
+  <h1 *ngSwitchDefault>unknown color</h1>
+</div>
+
+<h1>------switch case with Days-----</h1>
+<div [ngSwitch]="days">
+  <h1 *ngSwitchCase="'sunday'">Today is Sunday</h1>
+  <h1 *ngSwitchCase="'monday'">Today is Monday</h1>
+  <h1 *ngSwitchCase="'tuesday'">Today is Tuesday</h1>
+  <h1 *ngSwitchCase="'wednesday'">Today is Wednesday</h1>
+  <h1 *ngSwitchCase="'thursday'">Today is Thursday</h1>
+  <h1 *ngSwitchCase="'friday'">Today is Friday</h1>
+  <h1 *ngSwitchCase="'saturday'">Today is Saturday</h1>
+  <h1 *ngSwitchDefault> Correct Week Name </h1>
 </div>

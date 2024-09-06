@@ -13,5 +13,8 @@ export class LoopComponent implements OnInit {
   }
 
   show = "yes";
+  color= "red";
+  rang= "green";
+  days= "monday";
 
 }
