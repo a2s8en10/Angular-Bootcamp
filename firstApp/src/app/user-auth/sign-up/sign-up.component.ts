@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-sign-up',
@@ -15,4 +16,24 @@ export class SignUpComponent implements OnInit {
   {
     alert("successfully Sign Up");
   }
+
+  // form function
+  userData : any = {};
+  getForm(data:NgForm){
+    console.log(data);
+    this.userData = data;
+  }
+
+  num = false
+  change(){
+    this.num = true;
+  }
+
+  // toggle function (hide and show)
+
+  show = false;
+  toggle(){
+    this.show = !this.show;
+  }
+
 }

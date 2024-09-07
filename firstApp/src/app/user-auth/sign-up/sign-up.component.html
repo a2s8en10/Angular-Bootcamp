@@ -13,3 +13,25 @@
       <button (click)="getname()" type="submit">Sign up</button>
   </form>
 </div>
+
+<h1>---------------Basic Form-------------------</h1>
+
+<form #basicForm="ngForm" (ngSubmit)="getForm(basicForm.value)">
+  <input type="text" ngModel name="name" placeholder="Relax">
+  <br><br>
+  <input type="email" ngModel name="email" placeholder="xyz123@gmail.com">
+  <br><br>
+  <input type="password" ngModel name="password" placeholder="password">
+   <br><br>
+   <button (click)="change()">Login</button>
+</form>
+<div>
+  <button *ngIf="num"  (click)="toggle()">Show Information</button>
+  <ul *ngIf="show">
+    <li>your name is - {{userData.name}}</li>
+    <li>your email is - {{userData.email}}</li>
+    <li>your password is - {{userData.password}}</li>
+    <button (click)="toggle()">Hide Information</button>
+
+  </ul>
+</div>
