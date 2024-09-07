@@ -1,0 +1,25 @@
+nav{
+  background: #b0d3dba2;
+  padding: 10px;
+}
+nav image{
+  width: 70px;
+}
+
+ul{
+  float: right;
+  list-style-type: none;
+}
+ul li {
+  display: inline-block;
+  padding: 10px;
+}
+li a{
+  text-decoration: none;
+  color: rgba(153, 23, 120, 0.664)
+}
+a:hover{
+  color:rgb(75, 99, 236) ;
+}
+
+
