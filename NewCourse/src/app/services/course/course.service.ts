@@ -80,7 +80,7 @@ export class CourseService {
     });
 
     return updateCourses;
-  }
+  } 
 
   deleteCourse(data: Course) {
     // let courses = this.courses$.value;
