@@ -1,16 +1,22 @@
 {
   "seller": [
     {
-      "id": "f225",
+      "id": "6ce6",
       "name": "Anurag sahu",
-      "password": "Anurag123@",
-      "email": "anurag123@gmail.com"
+      "email": "anu.sahu9589@gmail.com",
+      "password": "123456"
     },
     {
-      "id": "ebf2",
-      "name": "Anurag sahu",
-      "password": "Anurag123@",
-      "email": "anurag123@gmail.com"
+      "id": "70d2",
+      "name": "Relax.Anurag",
+      "email": "shakuntlasahu453@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "37f4",
+      "name": "Pride anurag",
+      "email": "Anurag.@gmail.com",
+      "password": "NAUDHHWFHNUF"
     }
   ]
 }
