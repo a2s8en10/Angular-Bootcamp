@@ -38,6 +38,7 @@
 
   <div *NgIf="showLogin" class="Login">
     <h1>Seller Login</h1>
+    <p class="error-p">{{authError}}</p>
 
     <form
       #sellerLogin="ngForm"

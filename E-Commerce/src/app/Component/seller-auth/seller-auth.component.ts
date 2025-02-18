@@ -11,16 +11,22 @@ import { SignUp } from '../../data-type';
   styleUrl: './seller-auth.component.css'
 })
 export class SellerAuthComponent {
-  ngOnInit(): void{
-    this.seller.reloadSeller();
-  }
 
-  private seller = inject(SellerService);
-  // constructor(private seller: SellerService) { }
+  // ngOnInit(): void{      changes
+  //   this.seller.reloadSeller(); changes
+  // } changes
+
+
+  // private seller = inject(SellerService); changes
+  constructor(private seller: SellerService) {
+    this.seller.reloadSeller(); // changes
+  }
   showLogin=false;
+  authError : string = "";
 
   signUp(data: SignUp): void{
-    this.seller.userSignUp(data)   // api call
+    console.warn(data); // changes
+    this.seller.userSignUp(data);  // api call
   }
   openLogin(){
     this.showLogin = true;
@@ -29,8 +35,14 @@ export class SellerAuthComponent {
     this.showLogin = false;
   }
   Login(data: SignUp): void{
-    console.warn(data);
-    // this.seller.userSignUp(data) // api call
+    this.authError="";
+    // console.warn(data);
+    this.seller.userLogin(data) // api call
+    this.seller.isLoginError.subscribe((isError) => {
+      if(isError){
+        this.authError = "Email or password incorrect !!"
+      }
+    })
   }
 
 }
