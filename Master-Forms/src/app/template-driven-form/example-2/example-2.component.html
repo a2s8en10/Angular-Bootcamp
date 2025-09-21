@@ -1,0 +1,162 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>
+  <h2>User Registration Form</h2>
+
+  <!-- Name Field -->
+  <div class="form-input">
+    <label for="name">Name : </label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      [(ngModel)]="user.name"
+      #name="ngModel"
+      required
+      minlength="2"
+      maxlength="50"
+    />
+
+    @if(name.invalid && name.touched){
+    <div>
+      <small>
+        <!-- @if(name.errors?.['minlength']){
+          Minimum 3 characters required.
+          }
+          @else if(name.errors?.['maxlength']){
+            Maximum 50 characters allowed.
+            }
+            @else {
+              Name is required.
+              } -->
+        @if(name.errors!['required']) { Name is Required. }
+        @if(name.errors!['minlength']){ Minimum 3 character required. }
+        @if(name.errors!['maxlength']){ Maximum 50 character allowed. }
+      </small>
+    </div>
+    }
+  </div>
+
+  <!-- Email Field -->
+  <div class="form-input">
+    <label for="email">Email : </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      [(ngModel)]="user.email"
+      #email="ngModel"
+      required
+      email
+    />
+
+    @if(email.invalid && email.touched){
+    <div>
+      <small>
+        @if(email.errors!['email']) { Enter a valid Email Address. }@else {
+        Email is required. }
+      </small>
+    </div>
+    }
+  </div>
+
+  <!-- Password Field -->
+  <div class="form-input">
+    <label for="password">Password : </label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="user.password"
+      #password="ngModel"
+      required
+      minlength="8"
+    />
+
+    @if(password.invalid && password.touched){
+    <div>
+      <small>
+        @if(password.errors!['minlength']) { Minimum 8 character required.
+        }@else { Password is required. }
+      </small>
+    </div>
+    }
+  </div>
+
+  <!-- Age Field -->
+  <div class="form-input">
+    <label for="age">Age : </label>
+    <input
+      type="number"
+      id="age"
+      name="age"
+      [(ngModel)]="user.age"
+      #age="ngModel"
+      required
+      [min]="18"
+      [max]="65"
+    />
+
+    @if(age.invalid && age.touched){
+    <div>
+      <small>
+        @if(age.errors!['min']) { Minimum age is 18. } @if(age.errors!['max']){
+        Maximum age is 65. } @if(age.errors!['required']) { age is required. }
+      </small>
+    </div>
+    }
+  </div>
+
+  <!-- Gender Field -->
+  <div class="form-input">
+    <label for="gender">Gender : </label>
+    <select
+      name="gender"
+      id="gender"
+      [(ngModel)]="user.gender"
+      #gender="ngModel"
+      required
+    >
+      <option value="" disabled>Select Gender</option>
+      >
+      <option value="male">Male</option>
+      >
+      <option value="female">Female</option>
+      >
+      <option value="other">Other</option>
+    </select>
+
+    @if(gender.invalid && gender.touched){
+    <div>
+      <small> gender is required. </small>
+    </div>
+    }
+  </div>
+
+  <!-- term Checkbox  -->
+  <div class="form-input">
+    <input
+      type="checkbox"
+      id="terms"
+      name="terms"
+      [(ngModel)]="user.terms"
+      required
+      #terms="ngModel"
+    />
+    <label for="terms">I agree to the terms & conditions.</label>
+
+    @if(terms.invalid && terms.touched){
+    <div>
+      <small> You must accept the terms & conditions. </small>
+    </div>
+    }
+  </div>
+
+  <!-- Buttons -->
+  <div>
+    <!-- <button type="submit" [disabled]="userForm.invalid">Register</button> -->
+    <button type="submit">Register</button>
+    <button type="button" (click)="onReset(userForm)">Reset</button>
+  </div>
+
+  <!-- debugging -->
+  <pre>{{ userForm.value | json }}</pre>
+</form>

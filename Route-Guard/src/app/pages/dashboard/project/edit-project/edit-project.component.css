@@ -1,0 +1,49 @@
+.edit-project-container {
+  background-color: white;
+  padding: 30px;
+  max-width: 500px;
+  margin: 40px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.edit-project-container h3 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 22px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-group input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.save-button {
+  padding: 10px 20px;
+  background-color: #27ae60; /* Green Save Button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #1e8449;
+}

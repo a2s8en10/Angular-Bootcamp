@@ -1,0 +1,24 @@
+<p appElement >---------------------app-parent-to-child>------------------------</p>
+<app-parent-to-child [item]="data"> </app-parent-to-child>
+<button (click)="changeData()" >change data</button>
+
+<p appElement >---------------------userDetail------------------------</p>
+<ul *ngFor="let user of userDetail">
+  <app-user-detail [data]="user"></app-user-detail>
+</ul>
+
+<p appElement >---------------------app-child-to-parent------------------------</p>
+<h1>{{user}}</h1>
+<app-child-to-parent (updateEvent)="updateData($event)" ></app-child-to-parent>
+
+<p appElement >---------------------app-child-to-parent------------------------</p>
+<app-two-way-binding></app-two-way-binding>
+
+<p appElement >---------------------app-child-to-parent------------------------</p>
+<app-pipes></app-pipes>
+
+<p appElement >---------------------app-template-driven-form------------------------</p>
+<app-template-driven-form></app-template-driven-form>
+
+<p appElement >---------------------app-reactive-form------------------------</p>
+<app-reactive-form></app-reactive-form>

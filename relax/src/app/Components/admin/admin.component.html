@@ -1,0 +1,83 @@
+<div class="card">
+  <div class="card-header">Add Course</div>
+  <div class="card-body">
+    <form #Course="ngForm" (ngSubmit)="submit(Course)">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Enter The Title"
+          id="title"
+          name="title"
+          #title="ngModel"
+          [(ngModel)]="model().title"
+          required
+        />
+
+        @if(title.invalid && title.touched){
+        <div class="text-danger">Title is required</div>
+        }
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Description</label
+        >
+        <textarea
+          class="form-control"
+          rows="3"
+          placeholder="Enter The Description"
+          id="description"
+          name="description"
+          #description="ngModel"
+          [(ngModel)]="model().description"
+          required
+        ></textarea>
+
+        @if(description.invalid && description.touched){
+        <div class="text-danger">Description is required</div>
+        }
+      </div>
+      <div class="mb-3">
+        <label for="image">Select the image - </label>
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+          (change)="fileSelect($event)"
+          [multiple]="false"
+          ngModel
+          required
+        />
+        @if(cover()){
+        <div class="imageDiv" align="right">
+          <img [src]="cover()" alt="" />
+        </div>
+        } @if(showError()){
+        <div class="text-danger">Image is required</div>
+        }
+      </div>
+      <div class="mb-3" align="center">
+        <!-- class="btn btn-outline-primary btn-lg" is cannot work because ngClass is override the class -->
+        <button
+          type="submit"
+          class="btn btn-outline-primary btn-lg"
+          [ngClass]="{ 'btn': true, 'btn-lg': true,'btn-outline-primary': !isSaved(), 'btn-success': isSaved() }"
+          [ngStyle]="{ color: isSaved() ? 'white' : '' }"
+        >
+          {{ isSaved() ? "Saved" : "Save" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<section class="courses">
+  <!-- <app-course
+    [courses]="courses"
+    [isAdmin]="true"
+    (del)="deleteCourse($event)"
+  ></app-course> -->
+  <app-course [isAdmin]="true"></app-course>
+</section>

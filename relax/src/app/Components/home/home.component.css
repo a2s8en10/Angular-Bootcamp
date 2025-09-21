@@ -1,0 +1,23 @@
+img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 89vh;
+  margin-top: 10px;
+}
+
+.main-content {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  h1 {
+    color: white;
+    font-size: 3rem;
+  }
+}
+
+section.courses {
+  background-color:#4029292e;
+  padding: 6vh;
+}

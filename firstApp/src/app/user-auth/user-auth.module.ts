@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import {FormsModule} from '@angular/forms';
+// import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 
@@ -13,7 +14,9 @@ import {FormsModule} from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    // MatSlideToggleModule,
+
   ],
   exports: [
     SignUpComponent,

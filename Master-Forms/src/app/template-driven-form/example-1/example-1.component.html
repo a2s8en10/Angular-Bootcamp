@@ -1,0 +1,41 @@
+<form #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+  <label for="name">Name</label>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    [(ngModel)]="user.name"
+    required
+    #name="ngModel"
+    minlength="5"
+  />
+
+  <!-- without passing # in input then use the `formData.form.controls['name'].invalid` -->
+  <!--
+  @if(formData.submitted && formData.form.controls['name'].invalid){
+  <div class="error">Name is required and must be at least 5 characters.</div>
+  } -->
+  @if(name.pristine){
+  <div class="error">This field is pristine (Unchanged)</div>
+  } @if(name.dirty){
+  <div class="error">this field is dirty modified</div>
+  } @if(formData.submitted && name.invalid){
+  <div class="error">Name is required and must be at least 5 characters.</div>
+  }
+
+  <label for="email">Email</label>
+  <input
+    type="text"
+    id="Email"
+    name="Email"
+    [(ngModel)]="user.email"
+    required
+    #email="ngModel"
+  />
+
+  @if(formData.submitted && email.invalid){
+  <div class="error">Please enter the valid email</div>
+  }
+
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+
+<h1>Admin page</h1>
+<ul>
+  <li><a routerLink="admin/list">List</a></li>
+  <li><a routerLink="admin/login">login</a></li>
+</ul>
+
+<h1>users page</h1>
+<ul>
+  <li><a routerLink="users/list">List</a></li>
+  <li><a routerLink="users/login">login</a></li>
+</ul>
+
+<h1>lazy loading</h1>
+<ul>
+  <li><a routerLink="lazyloading/list">List</a></li>
+  <li><a routerLink="lazyloading/login">login</a></li>
+</ul>
+<router-outlet> </router-outlet>
+
+<button (click)="loadUser()">user</button>
+<button (click)="loadAdmin()">admin</button>

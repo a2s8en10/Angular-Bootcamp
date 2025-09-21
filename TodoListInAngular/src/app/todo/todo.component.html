@@ -1,0 +1,10 @@
+<p>todo works!</p>
+<input type="text" placeholder="Enter the text" #todo>
+<button (click)="addData(todo.value)" >Add text</button>
+<ul *ngFor="let item of list">
+  <li>
+    {{item.name}}
+    <!-- {{item.id}} -->
+    <button (click)="removeText(item.id)" >Remove</button>
+  </li>
+</ul>

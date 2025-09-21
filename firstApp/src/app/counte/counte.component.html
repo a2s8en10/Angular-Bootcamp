@@ -1,0 +1,20 @@
+<p>counte works!</p>
+
+<button (click)="counter('minus')">--</button>
+
+<p>count : {{count}}</p>
+<button (click)="counter('add')">++</button>
+<br><br>
+<button (click)="getData()" >cef</button>
+<h1 *ngIf="hey ;then ifCondition else elseCondition  "></h1>
+
+<ng-template  #ifCondition>
+  <h1 > i am jay</h1>
+</ng-template>
+
+
+<ng-template  #elseCondition>
+  <h1 > i bro</h1>
+</ng-template>
+
+

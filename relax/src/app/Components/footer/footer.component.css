@@ -1,0 +1,26 @@
+.footer{
+  background-color: rgba(0, 0, 0, 0.816);
+  color: white;
+  padding: 4vh 0;
+
+  a{
+    color: white;
+    text-decoration : none;
+  }
+  a:hover{
+    color: rgb(0, 136, 255);
+  }
+  h5{
+    margin-bottom: 2vh;
+    font-weight: bold;
+  }
+  .social-icons{
+    a{
+      color: white;
+      font-size: 1.4rem;
+    }
+    a:hover{
+    color: rgb(0, 98, 255) !important;
+    }
+  }
+}

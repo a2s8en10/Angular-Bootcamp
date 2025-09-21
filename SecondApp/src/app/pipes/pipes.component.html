@@ -1,0 +1,22 @@
+<h3>pipes works!</h3>
+
+<h1>{{data | uppercase}}</h1>
+<h1>{{data | lowercase}}</h1>
+<h1>{{data}}</h1>
+<h1>{{today | date }}</h1>
+<h1>{{today | date:'fullDate' }}</h1>
+<h1>without using pipes : {{capString (data)}}</h1>
+
+<h3>----------------  using Advance pipe -------------------------</h3>
+
+<h1>{{data | slice:0:6}}</h1>
+<h1>{{data | slice:0:6  | lowercase}}</h1>
+<h1>{{jsonData | json}}</h1>
+<h1>{{2000.3000 | number:'2.3-4'}}</h1>
+<h1>{{2.3 | number:'4.3-6'}}</h1>
+<h1>{{20 | currency :'USD'}}</h1>
+<h1>{{20 | currency :'INR'}}</h1>
+<h1>{{20 | currency :'GBP'}}</h1>
+
+<h3>----------------  using Custom pipe -------------------------</h3>
+<h1>{{20 | pipes:100}}</h1>  <!-- pipes is value or args is 100 [value:args]    -->
