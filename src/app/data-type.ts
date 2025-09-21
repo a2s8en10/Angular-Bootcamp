@@ -17,4 +17,5 @@ export interface product{
   image : string;
   description : string;
   id: number;
+  quantity:undefined|number;
 }

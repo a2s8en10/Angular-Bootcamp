@@ -47,7 +47,8 @@
       </div>
 
       <button class=" form-button">Buy Now</button>
-        <button class="form-button">Add to Cart</button>
+        <button *ngIf="!removeCart" class="form-button" (click)="AddToCart()">Add to Cart</button>
+        <button *ngIf="removeCart" class="form-button" (click)="removeToCart(showDetail.id)">Remove to Cart</button>
       </div>
     </div>
   </div>

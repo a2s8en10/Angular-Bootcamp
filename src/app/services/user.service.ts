@@ -34,6 +34,7 @@ export class UserService {
           localStorage.setItem('user', JSON.stringify(result.body[0]));
           this.route.navigate(['/']);
         } else {
+          console.log('User Login In Failed');
           this.invalidUserAuth.emit(true);
         }
       });

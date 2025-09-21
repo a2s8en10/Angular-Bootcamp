@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Login, Signup } from '../data-type';
 import { BehaviorSubject, Observable, observeOn } from 'rxjs';
 import { Router } from '@angular/router';
+import { faL } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SellerService {
   isSellerLoggedIn = new BehaviorSubject<boolean>(false);
-  isLoginError= new EventEmitter<boolean>(false);
+  isLoginError = new EventEmitter<boolean>(false);
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -22,6 +23,7 @@ export class SellerService {
         this.router.navigate(['seller-home']);
       });
   }
+
   reloadSeller() {
     if (localStorage.getItem('seller')) {
       this.isSellerLoggedIn.next(true);
@@ -36,16 +38,17 @@ export class SellerService {
         `http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
         { observe: 'response' }
       )
-      .subscribe((result: any) => {
+      .subscribe((result) => {
         console.log(result);
         if (result && result.body && result.body.length) {
-          console.log("User Logged In")
-          localStorage.setItem("seller", JSON.stringify(result.body[0]));
-          this.router.navigate(["/seller-home"]);
+          this.isLoginError.emit(false);
+          console.log('Seller Logged In');
+          localStorage.setItem('seller', JSON.stringify(result.body[0]));
+          this.router.navigate(['/seller-home']);
         } else {
-          console.log("Login In Failed");
+          console.log('Seller Login In Failed');
           this.isLoginError.emit(true);
         }
-      })
+      });
   }
 }

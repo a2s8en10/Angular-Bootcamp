@@ -9,6 +9,7 @@
   flex-wrap: wrap;
   font-family: "Segoe UI", sans-serif;
   position: relative;
+  /* background: linear-gradient(to right, rgb(112, 159, 234), rgb(204, 153, 153)); */
 }
 
 /* Logo/Heading */
@@ -53,7 +54,7 @@
 }
 
 /* Navigation links */
-.goto ul{
+.goto ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;

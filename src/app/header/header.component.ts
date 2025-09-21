@@ -15,40 +15,51 @@ export class HeaderComponent {
   sellerName: string = '';
   searchResult: undefined | product[];
   userName: string = '';
+  cartItems = 0;
 
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
-          // console.log('In seller area');
+          console.log('In seller area');
           this.menuType = 'seller';
           if (localStorage.getItem('seller')) {
             let sellerStore = localStorage.getItem('seller');
-            let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+            let sellerData = sellerStore && JSON.parse(sellerStore);
             this.sellerName = sellerData.name;
+            // console.log(this.sellerName);
           }
-        }
-        else if (localStorage.getItem('user')) {
+        } else if (localStorage.getItem('user')) {
+          console.log('In User area');
           this.menuType = 'user';
           let userStore = localStorage.getItem('user');
           let userData = userStore && JSON.parse(userStore);
           this.userName = userData.name;
+          // console.log(this.userName);
         } else {
-          // console.log('Outside seller');
+          console.log('Outside seller');
           this.menuType = 'default';
         }
       }
     });
+    let cartData = localStorage.getItem('localCart');
+    if (cartData) {
+      this.cartItems = JSON.parse(cartData).length;
+    }
+
+    this.product.cart.subscribe((result) => {
+      this.cartItems = result.length;
+    });
   }
+
   Logout() {
     localStorage.removeItem('seller');
     this.route.navigate(['']);
   }
 
-  userLogout(){
+  userLogout() {
     localStorage.removeItem('user');
     this.route.navigate(['/user-auth']);
-
   }
 
   // search suggested
